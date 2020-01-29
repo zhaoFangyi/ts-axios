@@ -91,10 +91,32 @@ axios({
   data: searchParams,
 })
 
-const arr = new Int32Array([21, 31])
+// const arr = new Int32Array([21, 31])
+
+// axios({
+//   method: 'post',
+//   url: '/base/buffer',
+//   data: arr
+// })
 
 axios({
   method: 'post',
-  url: '/base/buffer',
-  data: arr
+  url: '/base/post',
+  data: {
+    a: '111',
+    b: '222',
+  }
+}).then(res => {
+  console.log(res)
+})
+axios({
+  method: 'post',
+  url: '/base/post',
+  responseType: 'json',
+  data: {
+    a: 'aaaa',
+    b: 'bbbb',
+  }
+}).then(res => {
+  console.log(res)
 })
