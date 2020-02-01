@@ -14,6 +14,8 @@ export type Method =
   | 'patch'
   | 'PATCH'
 export interface AxiosRequestConfig {
+  transformRequest?: AxiosTransformer | AxiosTransformer[]
+  transformResponse?: AxiosTransformer | AxiosTransformer[]
   url?: string
   method?: Method
   data?: any
@@ -76,4 +78,8 @@ export interface ResolvedFn<T = any> {
 
 export interface RejectedFn {
   (error: any): any
+}
+
+export interface AxiosTransformer {
+  (data: any, headers?: any): any
 }
