@@ -33,6 +33,7 @@ registerErrorRouter()
 registerExtendRouter()
 registerInterceptorRouter()
 registerConfigRouter()
+registerCancelRouter()
 
 
 function registerSimpleRouter() {
@@ -130,6 +131,19 @@ function registerInterceptorRouter() {
 function registerConfigRouter() {
   router.post('/config/post', function (req, res) {
     res.json(req.body)
+  })
+}
+
+function registerCancelRouter() {
+  router.get('/cancel/get', function (req, res) {
+    setTimeout(() => {
+      res.json('hi cancel get')
+    }, 1000);
+  })
+  router.post('/cancel/post', function (req, res) {
+    setTimeout(() => {
+      res.json(req.body)
+    }, 1000);
   })
 }
 app.use(router)
