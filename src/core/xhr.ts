@@ -1,7 +1,8 @@
 import { AxiosRequestConfig, AxiosPromise, AxiosResponse } from '../types'
 import { parseHeaders } from '../helpers/headers'
 import { createError } from '../helpers/error'
-import { isURLSameOrigin, isFormData } from '../helpers/util'
+import { isFormData } from '../helpers/util'
+import { isURLSameOrigin } from '../helpers/url'
 import cookie from '../helpers/cookie'
 
 export default function xhr(config: AxiosRequestConfig): AxiosPromise {
