@@ -123,7 +123,7 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
       } else {
         reject(
           createError(
-            `Request failed with status code${response.status}`,
+            `Request failed with status code ${response.status}`,
             config,
             null,
             request,
