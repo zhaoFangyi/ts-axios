@@ -2,7 +2,6 @@ import {
   AxiosRequestConfig,
   AxiosPromise,
   Method,
-  AxiosInterceptorManager,
   AxiosResponse,
   ResolvedFn,
   RejectedFn
